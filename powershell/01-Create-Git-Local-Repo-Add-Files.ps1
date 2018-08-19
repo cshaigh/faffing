@@ -4,25 +4,25 @@ Write-Output $null >> file2.txt
 
 # The following command only adds updated files 
 # (changed files already known by Git)...
-git add -u
+git add --update
 
 # ...so no changes are noted: -
 git status
 
 # Could add explicitly, e.g. git add file1.txt file2.txt
 # or -A: -
-git add -A
+git add --all
 
 # Be careful not to add files accidentally...
 git status
 
-git commit -m "Added cool new feature"
+git commit --message "Added cool new feature"
 
 # Diff last commit
 git diff HEAD~1
 
 # Diff shows no content changes cos files are empty: -
-Get-Content -Path .\file1.txt
+Get-Content .\file1.txt
 
 # Update file1.txt
 Write-Output "Adding some code here" >> .\file1.txt
@@ -38,9 +38,9 @@ git add .\readme.md
 git status
 
 # Commit only changes to readme.me...
-git commit -m "Added new information to README"
+git commit --message "Added new information to README"
 
 # Now add and commit file1.txt changes
 git add .\file1.txt
 
-git commit -m "Fixed bug#1234"
+git commit --message "Fixed bug#1234"
